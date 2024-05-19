@@ -1,21 +1,16 @@
+"use client";
+
 import { useState } from "react";
-import { getPostsBySearch } from "@/service/getData";
-import { PostType } from "@/app/blog/page";
+import { usePosts } from "@/store/postsStore";
 
-type PropsType = {
-  getSearchPosts: (posts: PostType[]) => void
-}
-
-export const SearchPosts = ({ getSearchPosts }: PropsType) => {
+export const SearchPosts = () => {
+  const [getPostsBySearch] = usePosts(state => [state.getPostsByText])
   const [search, setSearch] = useState('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     getPostsBySearch(search)
-      .then(posts => {
-      getSearchPosts(posts);
-    })
   }
 
   return (
