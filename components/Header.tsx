@@ -1,11 +1,29 @@
-import Link from "next/link";
+import { Navigation } from "./Navigation";
+
+type LinkType = {
+  title: string
+  href: string
+}
+
+const links: LinkType[] = [
+  {
+    title: "Home",
+    href: "/"
+  },
+  {
+    title: "Blog",
+    href: "/blog"
+  },
+  {
+    title: "About",
+    href: "/about"
+  }
+]
 
 export const Header = () => {
   return (
     <header className={"p-3 flex justify-center bg-neutral-800 text-gray-50 "}>
-      <Link href="/" className={" hover:text-orange-500"}> Home </Link>
-      <Link href="/blog" className={"px-4  hover:text-orange-500"}> Blog </Link>
-      <Link href="/about" className={" hover:text-orange-500"}> About </Link>
+      <Navigation navLinks={links}/>
     </header>
   )
 }

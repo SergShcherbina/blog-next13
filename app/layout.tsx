@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={`${inter.className} grid grid-rows-[auto_1fr_auto] min-h-screen  `}>
+      <body className={`${inter.className} grid grid-rows-[auto_1fr_auto] min-h-screen`}>
         <Header/>
           <main className={" container mx-auto"}>
             {children}
