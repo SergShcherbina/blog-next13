@@ -25,8 +25,6 @@ const links: LinkType[] = [
 export const Header = async ({ children }: { children: React.ReactNode }) => {
     const session = await auth();
 
-    console.log('session:', session);
-
     return (
         <header className={'p-3 flex bg-neutral-800 text-gray-50 items-center'}>
             <Navigation navLinks={links} />
