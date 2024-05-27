@@ -28,8 +28,8 @@ const Post = async ({ params: { id } }: ParamsType) => {
 
     return (
         <div>
-            <h1 className={' text-3xl border-b py-3 text-center'}>{post.title}</h1>
-            <p className={' '}>{post.body}</p>
+            <h1 className={'text-3xl border-b py-3 text-center'}>{post.title}</h1>
+            <p>{post.body}</p>
         </div>
     );
 };

@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 const Blog = () => {
     return (
-        <div className={' px-3'}>
-            <h1 className={' my-5 text-3xl  text-center'}>Blog page</h1>
+        <div className={'px-3'}>
+            <h1 className={'my-5 text-3xl text-center'}>Blog page</h1>
             <SearchPosts />
             <Posts />
         </div>

@@ -7,12 +7,15 @@ export const metadata: Metadata = {
 
 const About = () => {
     return (
-        <p className={' my-5'}>
-            {' '}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi cumque cupiditate dolore dolores
-            doloribus error esse eum in inventore ipsa itaque laudantium odio quaerat quasi, recusandae soluta tempora
-            veritatis?
-        </p>
+        <>
+            <h3 className={'mt-3 text-xl'}>this children about:</h3>
+            <p className={'my-5'}>
+                {' '}
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi cumque cupiditate dolore
+                dolores doloribus error esse eum in inventore ipsa itaque laudantium odio quaerat quasi, recusandae
+                soluta tempora veritatis?
+            </p>
+        </>
     );
 };
 export default About;
