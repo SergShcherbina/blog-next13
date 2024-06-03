@@ -1,5 +1,5 @@
 export const getPosts = async () => {
-    const response = await fetch('api/posts', {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
         next: {
             revalidate: 60,
         },
@@ -10,8 +10,17 @@ export const getPosts = async () => {
 };
 
 export const getPostsBySearch = async (search: string) => {
-    const response = await fetch(`api/posts?q=${search}`, {});
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${search}`, {});
     if (!response.ok) throw new Error('Failed to fetch getPostsBySearch');
 
+    return response.json();
+};
+
+export const getPostById = async (id: string) => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        next: {
+            revalidate: 60,
+        },
+    });
     return response.json();
 };
