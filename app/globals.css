@@ -16,7 +16,8 @@ body {
     overflow-x: hidden;
 }
 
-body {
+main {
+    padding: 0 2%;
 }
 
 a {
