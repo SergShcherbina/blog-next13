@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+    --text-color: #1A1A1A
 }
 
 * {
@@ -14,6 +15,7 @@
 html,
 body {
     overflow-x: hidden;
+    color: var(--text-color)
 }
 
 main {

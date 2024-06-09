@@ -1,0 +1,33 @@
+.root{
+  @apply flex gap-7  w-full h-auto flex-wrap;
+
+    .image {
+      @apply aspect-[16/9] bg-violet-100 flex-1 min-w-[200px];
+    }
+
+  .content{
+    @apply flex flex-col gap-3;
+
+    .author {
+      @apply text-sm text-violet-800 font-medium text-sm ;
+    }
+
+    .title {
+      @apply text-xl font-semibold ;
+    }
+
+    .description {
+      @apply text-gray-500 text-base mb-2; ;
+    }
+
+    .wrapperTags {
+      @apply flex gap-2;
+
+      & span {
+        @apply text-sm rounded-2xl px-3 py-1 bg-violet-100 text-violet-800;
+      }
+    }
+  }
+
+
+}

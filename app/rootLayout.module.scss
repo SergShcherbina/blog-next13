@@ -1,0 +1,11 @@
+.body {
+  @apply grid grid-rows-[auto_1fr_auto] min-h-screen;
+
+  .title {
+    @apply font-bold py-6 text-center text-6xl sm:text-8xl md:text-9xl lg:text-[180px] xl:text-[243px] border-b border-t border-gray-400;
+  }
+
+  .main{
+    @apply container mx-auto
+  }
+}

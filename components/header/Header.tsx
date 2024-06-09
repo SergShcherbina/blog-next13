@@ -1,6 +1,7 @@
-import { Navigation } from './Navigation';
+import { Navigation } from '../navigation/Navigation';
 import Link from 'next/link';
 import { auth } from '@/configs/auth';
+import s from './header.module.scss';
 
 type LinkType = {
     title: string;
@@ -26,18 +27,15 @@ export const Header = async ({ children }: { children: React.ReactNode }) => {
     const session = await auth();
 
     return (
-        <header className={'p-3 flex bg-neutral-800 text-gray-50 items-center'}>
-            <Navigation navLinks={links} />
+        <header className={s.header}>
             {session ? (
                 children
             ) : (
-                <Link
-                    href={'/signin'}
-                    className={`rounded-lg px-3 py-2 font-medium hover:bg-slate-100 hover:text-slate-900`}
-                >
+                <Link href={'/signin'} className={s.link}>
                     Sign in
                 </Link>
             )}
+            <Navigation navLinks={links} />
         </header>
     );
 };

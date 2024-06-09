@@ -1,0 +1,9 @@
+.nav{
+  @apply flex gap-3;
+
+  .link {
+    @apply text-lg font-normal lg:text-xl hover:text-orange-500 hover:translate-y-0.5;
+  }
+}
+
+

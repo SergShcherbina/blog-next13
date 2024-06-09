@@ -3,7 +3,9 @@ import { Inter } from 'next/font/google';
 import { Footer, Header } from '@/components';
 import './globals.css';
 import { Provider } from '@/components/Provider';
-import Profile from '@/components/Profile';
+import Profile from '@/components/profile/Profile';
+import cl from 'clsx';
+import s from './rootLayout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,13 +16,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang='ru'>
-            <body className={`${inter.className} grid grid-rows-[auto_1fr_auto] min-h-screen`}>
+        <html lang='en'>
+            <body className={cl(inter.className, s.body)}>
                 <Provider>
                     <Header>
                         <Profile />
                     </Header>
-                    <main className={' container mx-auto'}>{children}</main>
+                    <main className={s.main}>
+                        <p className={s.title}>{'THE BLOG'}</p>
+                        {children}
+                    </main>
                     <Footer />
                 </Provider>
             </body>
