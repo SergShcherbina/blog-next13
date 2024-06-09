@@ -20,7 +20,7 @@ export const Posts = () => {
                 <ul>
                     {posts.map((post: PostType) => (
                         <li key={post.id}>
-                            <Link href={`/blog/${post.id}`} className={' hover:text-orange-500 hover:translate-x-0.5'}>
+                            <Link href={`/blog/${post.id}`} className={' hover:text-violet-500 hover:translate-x-0.5'}>
                                 {post.title}
                             </Link>
                         </li>

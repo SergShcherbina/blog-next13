@@ -4,23 +4,29 @@ import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
 export interface IArticleFields {
+  /** Картинка */
+  image: Asset;
+
+  /** Автор */
+  author: string;
+
   /** Заголовок */
   title?: string | undefined;
 
   /** Описание */
   description?: string | undefined;
 
-  /** Картинка */
-  image: Asset;
-
   /** slug */
   slug?: string | undefined;
 
-  /** Текст кнопки */
-  buttonText?: string | undefined;
+  /** Tags */
+  tag?: string | undefined;
 
   /** Текст */
   text?: Document | undefined;
+
+  /** Дата публикации */
+  date?: string | undefined;
 }
 
 export interface IArticle extends Entry<IArticleFields> {

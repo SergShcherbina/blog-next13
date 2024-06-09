@@ -38,7 +38,7 @@ export const CardWithArticle = async () => {
                         href={`/${item.fields.slug}`}
                         className={'block mt-3 p-2 text-center rounded-md bg-gray-200 hover:bg-gray-300 '}
                     >
-                        {item.fields.buttonText}
+                        {'Read more'}
                     </Link>
                 </article>
             ))}

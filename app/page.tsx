@@ -20,13 +20,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function MainPage() {
     const data = await fetchPostData();
-    // const image = data.image?.fields.file?.url;
 
     return (
         <div>
             <RecentPosts />
             <AllBlogPosts />
-            {/*<CardWithArticle />*/}
         </div>
     );
 }
