@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import { client } from '@/clientContentful/client';
 import { IMainFields } from '@/contentful';
 import { CONTENT_TYPE_ID } from '@/constants';
@@ -10,17 +9,15 @@ async function fetchPostData() {
     return data.items[0].fields as unknown as IMainFields;
 }
 
-export const generateMetadata = async (): Promise<Metadata> => {
-    const { title, description } = await fetchPostData();
-    return {
-        title: `${title} | Next App`,
-        description: description,
-    };
-};
+// export const generateMetadata = async (): Promise<Metadata> => {
+//     const { title, description } = await fetchPostData();
+//     return {
+//         title: `${title} | Next App`,
+//         description: description,
+//     };
+// };
 
 export default async function MainPage() {
-    const data = await fetchPostData();
-
     return (
         <div>
             <RecentPosts />

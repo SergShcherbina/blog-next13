@@ -2,7 +2,7 @@
   @apply flex gap-6 w-full h-auto flex-wrap;
 
   .wrapperImage{
-    @apply w-full h-[200px] overflow-hidden;
+    @apply w-full overflow-hidden;
 
     .image {
       @apply  w-full h-full object-cover; ;
@@ -17,8 +17,16 @@
       @apply text-sm text-violet-800 font-medium;
     }
 
-    .title {
-      @apply text-xl font-semibold ;
+    .wrapperTitle {
+      @apply flex justify-between ;
+
+      .title {
+        @apply text-xl font-semibold;
+      }
+
+      .icon {
+        @apply mr-1.5 mt-2 shrink-0;
+      }
     }
 
     .description {
@@ -33,6 +41,4 @@
       }
     }
   }
-
-
 }

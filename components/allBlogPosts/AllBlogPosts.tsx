@@ -1,9 +1,7 @@
-import { Article } from '@/components/article/Article';
-import s from './allBlogPosts.module.scss';
 import { client } from '@/clientContentful/client';
 import { CONTENT_TYPE_ID } from '@/constants';
-
-type ImageFieldType = { fields: { file: { url: string; title: string } } };
+import { ListArticle } from '@/components/listArticle/ListArticle';
+import s from './allBlogPosts.module.scss';
 
 async function fetchCardData() {
     const data = await client.getEntries<any>({
@@ -20,20 +18,7 @@ export const AllBlogPosts = async () => {
         <section className={s.root}>
             <h3 className={s.title}>All Blog Posts</h3>
             <div className={s.wrapperArticles}>
-                {data.map(item => {
-                    const datePublic = new Date(item.fields.date as string).toDateString();
-                    return (
-                        <Article
-                            key={item.sys.id}
-                            imagePath={`https://${(item.fields.image as ImageFieldType).fields.file.url}`}
-                            title={item.fields.title as string}
-                            description={item.fields.description as string}
-                            tags={(item.fields.tag as string).split(',')}
-                            author={item.fields.author as string}
-                            date={datePublic}
-                        />
-                    );
-                })}
+                <ListArticle data={data} />
             </div>
         </section>
     );

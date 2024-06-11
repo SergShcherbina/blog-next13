@@ -7,9 +7,13 @@
 
   .wrapperArticles{
     @apply pt-8 flex flex-wrap gap-6;
-  }
 
-  & article{
-    @apply grow shrink basis-[280px] sm:grow-0 lg:basis-[340px];
+     article {
+      @apply grow shrink basis-[280px] sm:grow-0 lg:basis-[340px];
+
+        & > div:has(img) {
+         @apply h-[200px];
+       }
+    }
   }
 }
