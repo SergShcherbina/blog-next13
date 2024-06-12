@@ -1,0 +1,15 @@
+.wrapperImg{
+    @apply w-full sm:h-[300px] md:h-[400px] lg:h-[500px];
+
+    .image{
+        @apply mx-auto w-full h-full object-cover;
+    }
+}
+
+.title {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-6 text-center;
+}
+
+.text {
+    @apply text-base lg:text-lg indent-8;
+}

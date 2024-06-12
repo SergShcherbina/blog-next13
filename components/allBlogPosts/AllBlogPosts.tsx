@@ -1,18 +1,9 @@
-import { client } from '@/clientContentful/client';
-import { CONTENT_TYPE_ID } from '@/constants';
 import { ListArticle } from '@/components/listArticle/ListArticle';
 import s from './allBlogPosts.module.scss';
-
-async function fetchCardData() {
-    const data = await client.getEntries<any>({
-        content_type: CONTENT_TYPE_ID.article,
-        limit: 8,
-    });
-    return data.items;
-}
+import {getData} from "@/service/getData";
 
 export const AllBlogPosts = async () => {
-    const data = await fetchCardData();
+    const data = await getData.getPosts(8);
 
     return (
         <section className={s.root}>
