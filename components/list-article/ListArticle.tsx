@@ -13,7 +13,7 @@ export const ListArticle = ({ data }: PropsType) => {
                 return (
                     <Article
                         key={item.sys.id}
-                        imagePath={`https://${item.fields.image.fields.file!.url}`}
+                        imagePath={`https://${item.fields.image.fields.file?.url}`}
                         title={item.fields.title}
                         description={item.fields.description}
                         tags={item.fields.tag.split(',')}

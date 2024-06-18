@@ -5,7 +5,7 @@ import s from './article.module.scss';
 import Link from 'next/link';
 
 type Props = {
-    imagePath: any;
+    imagePath: string;
     title: string;
     description: string;
     tags: string[];

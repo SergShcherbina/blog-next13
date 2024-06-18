@@ -7,4 +7,4 @@ export { AllBlogPosts } from './all-blog-posts/AllBlogPosts';
 export { RecentPosts } from './recent-posts/RecentPosts';
 export { ListArticle } from './list-article/ListArticle';
 export { Navigation } from './navigation/Navigation';
-export { Provider } from './session-provider/Provider';
+export { Provider } from './Provider';
