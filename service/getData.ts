@@ -1,58 +1,31 @@
-
-import {client} from "@/clientContentful/client";
-import {IArticleFields} from "@/contentful";
-import {CONTENT_TYPE_ID} from "@/constants";
-
-export const getPosts = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-        next: {
-            revalidate: 60,
-        },
-    });
-    if (!response.ok) throw new Error('Failed to fetch getPosts');
-
-    return response.json();
-};
-
-export const getPostsBySearch = async (search: string) => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${search}`, {});
-    if (!response.ok) throw new Error('Failed to fetch getPostsBySearch');
-
-    return response.json();
-};
-
-export const getPostById = async (id: string) => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-        next: {
-            revalidate: 60,
-        },
-    });
-    return response.json();
-};
+import { client } from '@/clientContentful/client';
+import { CONTENT_TYPE_ID } from '@/constants';
+import { IFields, IContentTypeId, IResponseGetPosts } from '@/types/getPostsType';
+import { EntrySkeletonType } from 'contentful';
 
 export const getData = {
-     getPostsByText: async (searchText: string) => {
-        const response = await client.getEntries<any>({
+    getPostsByText: async (searchText: string) => {
+        const response = await client.getEntries<EntrySkeletonType<IFields & IContentTypeId>>({
             content_type: CONTENT_TYPE_ID.article,
             query: searchText,
         });
-        const arrData: string[] = response.items.map((post: any) => post.fields.title)
-        return arrData as unknown as string[];
+        return response.items.map(post => post.fields);
     },
 
-     getPostBySlug: async (slug: string) => {
-        const response = await client.getEntries<any>({
+    getPostBySlug: async (slug: string): Promise<IFields> => {
+        const response = await client.getEntries<EntrySkeletonType<IFields & IContentTypeId>>({
             content_type: CONTENT_TYPE_ID.article,
             limit: 1,
             'fields.slug': slug,
         });
-        return response.items[0].fields as unknown as IArticleFields;
+        return response.items[0].fields;
     },
+
     getPosts: async (limit = 4) => {
-        const response = await client.getEntries<any>({
+        const response = await client.getEntries<EntrySkeletonType<IFields & IContentTypeId>>({
             content_type: CONTENT_TYPE_ID.article,
-            limit
+            limit,
         });
-        return response.items as unknown as IArticleFields[];
+        return response.items as unknown as IResponseGetPosts[];
     },
-}
+};

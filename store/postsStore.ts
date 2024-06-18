@@ -1,10 +1,10 @@
 import { createWithEqualityFn } from 'zustand/traditional';
-import { PostType } from '@/app/blog/page';
-import { getPosts, getPostsBySearch } from '@/service/getData';
+import { getData } from '@/service/getData';
 import { shallow } from 'zustand/shallow';
+import { IFields } from '@/types/getPostsType';
 
 export type PostsTypeStore = {
-    posts: PostType[];
+    posts: IFields[];
     loading: boolean;
     error: Error | null;
     getPosts: () => void;
@@ -14,6 +14,7 @@ export type PostsTypeStore = {
 export const usePosts = createWithEqualityFn<PostsTypeStore>()(
     set => ({
         posts: [],
+        linkToPosts: null,
         loading: false,
         error: null,
         getPosts: async () => {
@@ -22,7 +23,7 @@ export const usePosts = createWithEqualityFn<PostsTypeStore>()(
             });
             try {
                 set({
-                    posts: await getPosts(),
+                    posts: await getData.getPosts(10).then(data => data.map(item => item.fields)),
                 });
             } catch (error: Error | any) {
                 set({
@@ -40,7 +41,7 @@ export const usePosts = createWithEqualityFn<PostsTypeStore>()(
             });
             try {
                 set({
-                    posts: await getPostsBySearch(search),
+                    posts: await getData.getPostsByText(search),
                 });
             } catch (error: Error | any) {
                 set({
