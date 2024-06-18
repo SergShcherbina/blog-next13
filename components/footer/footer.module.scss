@@ -1,0 +1,11 @@
+.footer {
+    @apply p-3  border-t;
+
+    .wrapper {
+        @apply mx-auto flex flex-wrap justify-center items-center gap-3;
+    }
+
+    .link {
+        @apply font-normal hover:text-violet-500;
+    }
+}

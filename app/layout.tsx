@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer, Header } from '@/components';
 import './globals.css';
-import { Provider } from '@/components/Provider';
+import { Provider } from '@/components/session-provider/Provider';
 import Profile from '@/components/profile/Profile';
 import cl from 'clsx';
 import s from './rootLayout.module.scss';

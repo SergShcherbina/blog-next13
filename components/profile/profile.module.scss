@@ -1,11 +1,11 @@
-.link{
-  @apply flex items-center;
+.link {
+    @apply flex items-center;
 
-  .ava{
-    @apply w-14 h-14 rounded-full
-  }
+    .ava {
+        @apply w-14 h-14 rounded-full;
+    }
 
-  .username {
-    @apply text-center align-middle p-3 font-medium text-lg lg:text-xl
-  }
+    .username {
+        @apply text-center align-middle p-3 font-medium text-lg lg:text-xl;
+    }
 }

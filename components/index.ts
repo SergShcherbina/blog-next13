@@ -1,2 +1,10 @@
-export * from './header/Header';
-export * from './Footer';
+export { Header } from './header/Header';
+export { Footer } from './footer/Footer';
+export { Posts } from './posts/Posts';
+export { SearchPosts } from './search-post/SearchPosts';
+export { Article } from './article/Article';
+export { AllBlogPosts } from './all-blog-posts/AllBlogPosts';
+export { RecentPosts } from './recent-posts/RecentPosts';
+export { ListArticle } from './list-article/ListArticle';
+export { Navigation } from './navigation/Navigation';
+export { Provider } from './session-provider/Provider';
