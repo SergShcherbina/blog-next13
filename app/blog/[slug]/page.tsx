@@ -1,33 +1,36 @@
-import {client} from "@/clientContentful/client";
-import {CONTENT_TYPE_ID} from "@/constants";
-import Image from "next/image";
-import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
-import {getData} from "@/service/getData";
-import s from './post-page.module.scss'
+import { client } from '@/clientContentful/client';
+import { CONTENT_TYPE_ID } from '@/constants';
+import Image from 'next/image';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { getData } from '@/service/getData';
+import s from './post-page.module.scss';
 
-type ParamsType ={
+type ParamsType = {
     params: {
-        slug: string
-    }
-}
+        slug: string;
+    };
+};
 
-export default async function PostPage({ params: { slug } }: ParamsType){
+export default async function PostPage({ params: { slug } }: ParamsType) {
     const post = await getData.getPostBySlug(slug);
 
     return (
         <article>
             <div className={s.wrapperImg}>
-                <Image src={`https:${post.image.fields.file?.url}`}
-                       alt={post.image.fields.title as string}
-                       width={1000} height={300}
-                       className={s.image}
+                <Image
+                    src={`https:${post.image.fields.file?.url}`}
+                    alt={post.image.fields.title as string}
+                    width={1200}
+                    height={400}
+                    sizes={'(max-width: 640px) 100vw, 1200px'}
+                    priority={true}
+                    className={s.image}
                 />
             </div>
-
             <h1 className={s.title}>{post.title}</h1>
-            <div className={s.text}>{documentToReactComponents(post.text!)}</div>
+            <div className={s.text}>{documentToReactComponents(post.text)}</div>
         </article>
-    )
+    );
 }
 
 export async function generateStaticParams() {
