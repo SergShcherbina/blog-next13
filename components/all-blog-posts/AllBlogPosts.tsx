@@ -1,6 +1,7 @@
 import { ListArticle } from '@/components/list-article/ListArticle';
-import s from './allBlogPosts.module.scss';
 import { getData } from '@/service/getData';
+
+import s from './allBlogPosts.module.scss';
 
 export const AllBlogPosts = async () => {
     const data = await getData.getPosts(8);

@@ -1,9 +1,11 @@
-import Go from '@/assets/icons/Go';
 import clsx from 'clsx';
 import Image from 'next/image';
-import s from './article.module.scss';
 import Link from 'next/link';
+
+import Go from '@/assets/icons/Go';
 import { blurDataURL } from '@/public/blurDataURL';
+
+import s from './article.module.scss';
 
 type Props = {
     imagePath: string;
@@ -32,7 +34,7 @@ export const Article = ({ imagePath, title, description, tags, author, date, slu
 
             <div className={s.content}>
                 <div className={s.author}>
-                    <em>{author}</em> &bull; <time>{date}</time>
+                    <cite>{author}</cite> &bull; <time>{date}</time>
                 </div>
 
                 <Link href={`/blog/${slug}`} className={clsx(s.content, 'group')}>

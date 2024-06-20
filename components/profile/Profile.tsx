@@ -1,5 +1,7 @@
-import { auth } from '@/configs/auth';
 import Link from 'next/link';
+
+import { auth } from '@/configs/auth';
+
 import s from './profile.module.scss';
 
 export default async function Profile() {

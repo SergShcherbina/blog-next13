@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import s from './footer.module.scss';
 
 const dataFooter = [

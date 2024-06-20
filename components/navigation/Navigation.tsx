@@ -1,9 +1,10 @@
 'use client';
 
+import cn from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import s from './navigation.module.scss';
-import cn from 'clsx';
 
 type NavLink = {
     title: string;

@@ -1,10 +1,13 @@
+import './globals.css';
+
+import cl from 'clsx';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
 import { Footer, Header } from '@/components';
-import './globals.css';
-import { Provider } from '@/components/Provider';
 import Profile from '@/components/profile/Profile';
-import cl from 'clsx';
+import { Provider } from '@/components/Provider';
+
 import s from './rootLayout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });

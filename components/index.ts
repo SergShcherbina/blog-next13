@@ -1,10 +1,10 @@
-export { Header } from './header/Header';
-export { Footer } from './footer/Footer';
-export { Posts } from './posts/Posts';
-export { SearchPosts } from './search-post/SearchPosts';
-export { Article } from './article/Article';
 export { AllBlogPosts } from './all-blog-posts/AllBlogPosts';
-export { RecentPosts } from './recent-posts/RecentPosts';
+export { Article } from './article/Article';
+export { Footer } from './footer/Footer';
+export { Header } from './header/Header';
 export { ListArticle } from './list-article/ListArticle';
 export { Navigation } from './navigation/Navigation';
+export { Posts } from './posts/Posts';
 export { Provider } from './Provider';
+export { RecentPosts } from './recent-posts/RecentPosts';
+export { SearchPosts } from './search-post/SearchPosts';

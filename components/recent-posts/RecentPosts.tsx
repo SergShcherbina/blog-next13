@@ -1,5 +1,6 @@
 import { ListArticle } from '@/components/list-article/ListArticle';
 import { getData } from '@/service/getData';
+
 import s from './recentPosts.module.scss';
 
 export const RecentPosts = async () => {

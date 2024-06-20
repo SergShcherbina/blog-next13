@@ -1,6 +1,7 @@
+import { Metadata } from 'next';
+
 import { Posts } from '@/components/posts/Posts';
 import { SearchPosts } from '@/components/search-post/SearchPosts';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Blog | Next-13 App',

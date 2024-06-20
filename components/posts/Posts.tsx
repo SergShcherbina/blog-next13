@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { usePosts } from '@/store/postsStore';
 import { useEffect } from 'react';
+
+import { usePosts } from '@/store/postsStore';
 import { IFields } from '@/types/getPostsType';
+
 import s from './posts.module.scss';
 
 export const Posts = () => {

@@ -1,6 +1,8 @@
-import { Navigation } from '../navigation/Navigation';
 import Link from 'next/link';
+
 import { auth } from '@/configs/auth';
+
+import { Navigation } from '../navigation/Navigation';
 import s from './header.module.scss';
 
 type LinkType = {

@@ -1,5 +1,6 @@
-import { auth, signOut } from '@/configs/auth';
 import { redirect } from 'next/navigation';
+
+import { auth, signOut } from '@/configs/auth';
 
 export default async function SignOutPage() {
     const session = await auth();

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+
 import { usePosts } from '@/store/postsStore';
 
 export const SearchPosts = () => {

@@ -1,9 +1,11 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Image from 'next/image';
+
 import { client } from '@/clientContentful/client';
 import { CONTENT_TYPE_ID } from '@/constants';
-import Image from 'next/image';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { getData } from '@/service/getData';
 import { blurDataURL } from '@/public/blurDataURL';
+import { getData } from '@/service/getData';
+
 import s from './post-page.module.scss';
 
 type ParamsType = {
