@@ -1,0 +1,19 @@
+.linkArticle {
+    @apply  hover:text-neutral-500 duration-200 ease-in-out;
+
+    .wrapperTitle {
+      @apply flex justify-between;
+
+      .title {
+        @apply text-xl font-semibold;
+      }
+
+      .icon {
+        @apply mr-1.5 mt-2 shrink-0;
+      }
+    }
+
+    .description {
+      @apply text-gray-500 text-base mb-2;
+    }
+}
