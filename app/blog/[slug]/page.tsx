@@ -3,6 +3,7 @@ import { CONTENT_TYPE_ID } from '@/constants';
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getData } from '@/service/getData';
+import { blurDataURL } from '@/public/blurDataURL';
 import s from './post-page.module.scss';
 
 type ParamsType = {
@@ -20,11 +21,12 @@ export default async function PostPage({ params: { slug } }: ParamsType) {
                 <Image
                     src={`https:${post.image.fields.file?.url}`}
                     alt={post.image.fields.title as string}
-                    width={1200}
-                    height={400}
+                    fill={true}
                     sizes={'(max-width: 640px) 100vw, 1200px'}
                     priority={true}
                     className={s.image}
+                    placeholder={'blur'}
+                    blurDataURL={blurDataURL}
                 />
             </div>
             <h1 className={s.title}>{post.title}</h1>

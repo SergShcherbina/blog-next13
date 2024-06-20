@@ -11,7 +11,7 @@ export const Posts = () => {
 
     useEffect(() => {
         getPosts();
-    }, []);
+    }, [getPosts]);
 
     return (
         <ul>

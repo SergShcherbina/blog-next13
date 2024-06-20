@@ -2,10 +2,10 @@
     @apply flex gap-6 w-full h-auto flex-wrap;
 
     .wrapperImage {
-        @apply w-full h-auto overflow-hidden;
+        @apply w-full h-[150px] sm:h-[200px] relative;
 
         .image {
-            @apply w-full h-full object-cover;
+            @apply object-cover;
         }
     }
 

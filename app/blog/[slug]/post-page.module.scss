@@ -1,10 +1,10 @@
-//.wrapperImg{
-//    @apply w-[100%] h-[30vw] sm:h-[300px] md:h-[400px] overflow-hidden;
+.wrapperImg{
+    @apply w-[100%] h-[50vw] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] relative;
 
-.image {
-    @apply h-auto w-full;
+    .image {
+        @apply object-cover;
+    }
 }
-//}
 
 .title {
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-6 text-center;
