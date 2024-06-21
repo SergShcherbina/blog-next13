@@ -1,7 +1,7 @@
 .wrapperImage {
-  @apply w-full h-[150px] sm:h-[200px] relative;
+    @apply w-full h-[150px] sm:h-[200px] relative;
 
-  .image {
-    @apply object-cover;
-  }
+    .image {
+        @apply object-cover;
+    }
 }
