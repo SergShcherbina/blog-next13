@@ -10,7 +10,7 @@ export const AllBlogPosts = async () => {
         <section className={s.root}>
             <h3 className={s.title}>All Blog Posts</h3>
             <div className={s.wrapperArticles}>
-                <ListArticle data={data} />
+                <ListArticle data={data.items} />
             </div>
         </section>
     );

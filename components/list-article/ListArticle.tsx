@@ -1,8 +1,8 @@
 import { Article } from '@/components/article/Article';
-import { IResponseGetPosts } from '@/types/getPostsType';
+import { IPosts } from '@/types/getPostsType';
 
 type PropsType = {
-    data: IResponseGetPosts[];
+    data: IPosts[];
 };
 
 export const ListArticle = ({ data }: PropsType) => {

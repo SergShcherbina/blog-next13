@@ -10,7 +10,7 @@ export const RecentPosts = async () => {
         <section className={s.root}>
             <h2 className={s.title}>{'Recent posts'}</h2>
             <div className={s.wrapperArticles}>
-                <ListArticle data={data} />
+                <ListArticle data={data.items} />
             </div>
         </section>
     );

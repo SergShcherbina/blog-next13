@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 
+import { IArticleFields } from '@/contentful';
 import { usePosts } from '@/store/postsStore';
-import { IFields } from '@/types/getPostsType';
 
 import s from './posts.module.scss';
 
@@ -17,7 +17,7 @@ export const Posts = () => {
 
     return (
         <ul>
-            {posts.map((post: IFields) => (
+            {posts.map((post: IArticleFields) => (
                 <li key={post.slug}>
                     <Link href={`/blog/${post.slug}`} className={s.link}>
                         {post.title}

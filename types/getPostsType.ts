@@ -1,9 +1,17 @@
-import { Document } from '@contentful/rich-text-types';
 import { CONTENT_TYPE_ID } from '@/constants';
-import { Asset } from 'contentful/dist/types/types/asset';
+import { IArticleFields } from '@/contentful';
 
-export interface IResponseGetPosts {
-    fields: IFields;
+export interface IResponseData<T> {
+    sys: { type: unknown };
+    total: number;
+    skip: number;
+    limit: number;
+    items: T[];
+    includes: { Asset: [[Object], [Object], [Object], [Object]] };
+}
+
+export interface IPosts {
+    fields: IArticleFields;
     metadata: { tags: number[] };
     sys: {
         contentType: IEnvironment;
@@ -17,17 +25,6 @@ export interface IResponseGetPosts {
         updatedAt: string;
     };
 }
-
-export type IFields = {
-    author: string;
-    description: string;
-    image: Asset;
-    slug: string | any;
-    tag: string;
-    title: string;
-    text: Document;
-    date: string;
-};
 
 interface IEnvironment {
     sys: {

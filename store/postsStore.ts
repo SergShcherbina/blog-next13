@@ -1,10 +1,11 @@
-import { createWithEqualityFn } from 'zustand/traditional';
-import { getData } from '@/service/getData';
 import { shallow } from 'zustand/shallow';
-import { IFields } from '@/types/getPostsType';
+import { createWithEqualityFn } from 'zustand/traditional';
+
+import { IArticleFields } from '@/contentful';
+import { getData } from '@/service/getData';
 
 export type PostsTypeStore = {
-    posts: IFields[];
+    posts: IArticleFields[];
     loading: boolean;
     error: Error | null;
     getPosts: () => void;
@@ -23,7 +24,7 @@ export const usePosts = createWithEqualityFn<PostsTypeStore>()(
             });
             try {
                 set({
-                    posts: await getData.getPosts(10).then(data => data.map(item => item.fields)),
+                    posts: await getData.getPosts(10).then(data => data.items.map(item => item.fields)),
                 });
             } catch (error: Error | any) {
                 set({
